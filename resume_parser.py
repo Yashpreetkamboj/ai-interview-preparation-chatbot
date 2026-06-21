@@ -10,8 +10,8 @@ import pdfplumber
 import io
 import re
 
-from app.schemas import ResumeProfile
-from app.llm_client import call_llm_structured
+from schemas import ResumeProfile
+from llm_client import call_llm_structured
 
 
 MAX_RAW_CHARS = 8000  # truncate before sending to LLM to control token usage/latency
