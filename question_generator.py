@@ -4,8 +4,8 @@ Question generation: ResumeProfile + target_role -> structured QuestionSet.
 
 import uuid
 
-from app.schemas import ResumeProfile, QuestionSet, InterviewQuestion, QuestionType
-from app.llm_client import call_llm_structured
+from schemas import ResumeProfile, QuestionSet, InterviewQuestion, QuestionType
+from llm_client import call_llm_structured
 
 
 QUESTION_GEN_PROMPT = """You are an expert technical interviewer preparing a mock interview.
