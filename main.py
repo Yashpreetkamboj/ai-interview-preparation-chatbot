@@ -1,32 +1,19 @@
-"""
-FastAPI application: ties together resume parsing, question generation, and feedback.
-
-Endpoints:
-  POST /api/parse-resume        -> ResumeProfile
-  POST /api/generate-questions  -> QuestionSet
-  POST /api/submit-answers      -> InterviewSummary
-
-State is NOT persisted server-side beyond a single request — the frontend holds
-the resume profile, question set, and answers in memory and passes them back on
-each call. Simple, stateless, easy to reason about. Add a DB later if you need
-multi-session history.
-"""
-
 import os
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.schemas import (
+from schemas import (
     ResumeProfile,
     QuestionSet,
     InterviewSummary,
     GenerateQuestionsRequest,
     SubmitAnswersRequest,
 )
-from app.resume_parser import parse_resume_to_profile
-from app.question_generator import generate_questions
-from app.feedback_engine import generate_feedback
+
+from resume_parser import parse_resume_to_profile
+from question_generator import generate_questions
+from feedback_engine import generate_feedback
 
 app = FastAPI(title="AI Mock Interview Platform")
 
