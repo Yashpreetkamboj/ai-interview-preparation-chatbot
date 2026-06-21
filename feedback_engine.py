@@ -7,8 +7,8 @@ answers against each other for the summary, at the cost of slightly less depth p
 individual answer. Worth revisiting as a tunable if per-answer depth becomes the priority.
 """
 
-from app.schemas import AnswerSubmission, AnswerFeedback, InterviewSummary
-from app.llm_client import call_llm_structured
+from schemas import AnswerSubmission, AnswerFeedback, InterviewSummary
+from llm_client import call_llm_structured
 
 
 FEEDBACK_PROMPT = """You are an expert interview coach reviewing a candidate's mock interview
