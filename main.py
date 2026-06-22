@@ -19,16 +19,16 @@ app = FastAPI(title="AI Mock Interview Platform")
 
 # In production, set ALLOWED_ORIGINS to your Netlify URL, e.g.:
 # ALLOWED_ORIGINS=https://your-site.netlify.app
-allowed_origins_env = os.environ.get("ALLOWED_ORIGINS", "")
-allowed_origins = (
-    [o.strip() for o in allowed_origins_env.split(",") if o.strip()]
-    if allowed_origins_env
-    else ["http://localhost:5173"]  # local dev default
-)
+allowed_origins = [
+    "https://talentprepai.netlify.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
