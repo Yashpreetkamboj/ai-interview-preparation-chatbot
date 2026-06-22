@@ -5,7 +5,7 @@ import { useState, useCallback } from "react";
    Stages: upload -> role -> questions(loading) -> interview -> feedback(loading) -> summary
    ============================================================================ */
 
-const API_BASE = import.meta.env?.VITE_API_BASE || "http://localhost:8000";
+const API_BASE = "https://talentprepai.onrender.com";
 
 const STAGES = {
   UPLOAD: "upload",
